@@ -1,0 +1,199 @@
+<div class="modal fade " id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Add Employee</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="closeModal()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+            </div>
+            <div class="modal-body">
+
+
+                <form [formGroup]="addForm" novalidate class="form">
+
+
+
+                    <div class="form-group">
+                        <label for="id">Employee Id</label>
+                        <input id="id" formControlName="id" class="form-control" [ngClass]="
+                                addForm.controls['id'].invalid &&
+                        (addForm.controls['id'].touched || addForm.controls['id'].dirty) 
+                          ? 'is-invalid'
+                          : ''
+                      " />
+                        <div *ngIf="
+                                addForm.controls['id'].invalid &&
+                        (addForm.controls['id'].touched || addForm.controls['id'].dirty) 
+                      ">
+                            <label class="text-danger" *ngIf="addForm.controls['id'].hasError('required')">
+                Id is Required!
+              </label>
+                            <label class="text-danger" *ngIf="addForm.controls['id'].hasError('pattern')">
+                Enter a valid id!
+              </label>
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label for="employee_name">Employee Name</label>
+                        <input id="employee_name" formControlName="employee_name" class="form-control" [ngClass]="
+                                        addForm.controls['employee_name'].invalid &&
+                                (addForm.controls['employee_name'].touched || addForm.controls['employee_name'].dirty) 
+                                  ? 'is-invalid'
+                                  : ''
+                              " />
+                        <div *ngIf="
+                                        addForm.controls['employee_name'].invalid &&
+                                (addForm.controls['employee_name'].touched || addForm.controls['employee_name'].dirty) 
+                              ">
+                            <label class="text-danger" *ngIf="addForm.controls['employee_name'].hasError('required')">
+                Employee Name is Required!
+              </label>
+                            <label class="text-danger" *ngIf="addForm.controls['employee_name'].hasError('pattern')">
+                Enter a valid employee name
+              </label>
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label for="employee_salary">Employee Salary</label>
+                        <input id="employee_salary" formControlName="employee_salary" class="form-control" [ngClass]="
+                                                addForm.controls['employee_salary'].invalid &&
+                                        (addForm.controls['employee_salary'].touched || addForm.controls['employee_salary'].dirty) 
+                                          ? 'is-invalid'
+                                          : ''
+                                      " />
+                        <div *ngIf="
+                                                addForm.controls['employee_salary'].invalid &&
+                                        (addForm.controls['employee_salary'].touched || addForm.controls['employee_salary'].dirty) 
+                                      ">
+                            <label class="text-danger" *ngIf="addForm.controls['employee_salary'].hasError('required')">
+                Employee Salary is Required!
+              </label>
+                            <label class="text-danger" *ngIf="addForm.controls['employee_salary'].hasError('pattern')">
+                Enter a valid employee Salary
+              </label>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="employee_age">Employee Age</label>
+                        <input id="employee_age" formControlName="employee_age" class="form-control" [ngClass]="
+                                                    addForm.controls['employee_age'].invalid &&
+                                            (addForm.controls['employee_age'].touched || addForm.controls['employee_age'].dirty) 
+                                              ? 'is-invalid'
+                                              : ''
+                                          " />
+                        <div *ngIf="
+                                                    addForm.controls['employee_age'].invalid &&
+                                            (addForm.controls['employee_age'].touched || addForm.controls['employee_age'].dirty) 
+                                          ">
+                            <label class="text-danger" *ngIf="addForm.controls['employee_age'].hasError('required')">
+                Employee Age is Required!
+              </label>
+                            <label class="text-danger" *ngIf="addForm.controls['employee_age'].hasError('pattern')">
+                Enter a valid employee Age
+              </label>
+                        </div>
+                    </div>
+
+
+
+                    <div class="form-group">
+                        <label for="employee_phoneno">Employee Phoneno</label>
+                        <input id="employee_phoneno" formControlName="employee_phoneno" class="form-control" [ngClass]="
+                                                        addForm.controls['employee_phoneno'].invalid &&
+                                                (addForm.controls['employee_phoneno'].touched || addForm.controls['employee_phoneno'].dirty) 
+                                                  ? 'is-invalid'
+                                                  : ''
+                                              " />
+                        <div *ngIf="
+                                                        addForm.controls['employee_phoneno'].invalid &&
+                                                (addForm.controls['employee_phoneno'].touched || addForm.controls['employee_phoneno'].dirty) 
+                                              ">
+                            <label class="text-danger" *ngIf="addForm.controls['employee_phoneno'].hasError('required')">
+                Employee Phoneno is Required!
+              </label>
+                            <label class="text-danger" *ngIf="addForm.controls['employee_phoneno'].hasError('pattern')">
+                Enter a valid employee phoneno
+              </label>
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="employee_address">Employee Address</label>
+                        <input id="employee_address" formControlName="employee_address" class="form-control" [ngClass]="
+                                                            addForm.controls['employee_address'].invalid &&
+                                                    (addForm.controls['employee_address'].touched || addForm.controls['employee_address'].dirty) 
+                                                      ? 'is-invalid'
+                                                      : ''
+                                                  " />
+                        <div *ngIf="
+                                                            addForm.controls['employee_address'].invalid &&
+                                                    (addForm.controls['employee_address'].touched || addForm.controls['employee_address'].dirty) 
+                                                  ">
+                            <label class="text-danger" *ngIf="addForm.controls['employee_address'].hasError('required')">
+                Employee Address is Required!
+              </label>
+
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="employee_gender">Employee Gender</label>
+                        <input type="radio" value="male" formControlName="employee_gender" name="employee_gender"> Male
+                        <input type="radio" value="female" formControlName="employee_gender" name="employee_gender"> Female
+
+                        <div *ngIf="
+                                                                addForm.controls['employee_gender'].invalid &&
+                                                        (addForm.controls['employee_gender'].touched || addForm.controls['employee_gender'].dirty) 
+                                                      ">
+                            <label class="text-danger" *ngIf="addForm.controls['employee_gender'].hasError('required')">
+                Employee Gender is Required!
+              </label>
+
+                        </div>
+                    </div>
+
+
+                    <div class="form-group">
+                        <label for="employee_category">Employee Category</label>
+                        <select formControlName="employee_category" class="form-control" name="employee_category" id="employee_category">
+                          <option [ngValue]="null">Select Category</option>
+              <option [value]="category" *ngFor="let category of categories">{{category}}</option>
+            </select>
+                        <div *ngIf="
+                                                                addForm.controls['employee_category'].invalid &&
+                                                        (addForm.controls['employee_category'].touched || addForm.controls['employee_category'].dirty) 
+                                                      ">
+                            <label class="text-danger" *ngIf="addForm.controls['employee_category'].hasError('required')">
+                Employee Category is Required!
+              </label>
+
+                        </div>
+                    </div>
+
+
+
+
+
+                    <button class="btn btn-success" [disabled]='addForm.invalid' *ngIf="btnvisibility" (click)="onSubmit()" data-dismiss="modal">Save</button>
+
+
+                    <!-- <p>Form value: {{ addForm.value | json }}</p> -->
+
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

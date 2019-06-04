@@ -1,0 +1,40 @@
+<div class="col-md-12">
+    <h2> Employee List</h2>
+    <div class="table-responsive table-container">
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Employee Name</th>
+                    <th>Salary</th>
+                    <th>Age</th>
+                    <th>Phone No</th>
+                    <th>Address</th>
+                    <th>Gender</th>
+                    <th>Category</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr *ngFor="let emp of Employees ">
+                    <td>{{emp?.id}}</td>
+                    <td>{{emp?.employee_name}}</td>
+                    <td>{{emp?.employee_salary}}</td>
+                    <td>{{emp?.employee_age}}</td>
+                    <td>{{emp?.employee_phoneno}}</td>
+                    <td>{{emp?.employee_address}}</td>
+                    <td>{{emp?.employee_gender}}</td>
+                    <td>{{emp?.employee_category}}</td>
+                    <td *ngIf="emp">
+                        <button (click)="editEmp(emp)" style="margin-left: 20px;" class="btn btn-info" data-toggle="modal" data-target="#exampleModal1"> Edit</button>
+                        <button (click)="deleteEmp(emp)" class="btn btn-danger"> Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<app-edit-employee (selectData)="editEmpl($event)" [empDetail]="data"></app-edit-employee>
+<app-add-employee (selectData)="showEmpl($event)"></app-add-employee>
